@@ -74,7 +74,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_search"
-                app:tint="@color/text_hint_light"
+                app:tint="?attr/colorOnSurfaceVariant"
                 android:contentDescription="Search" />
 
             <EditText
@@ -87,7 +87,7 @@
                 android:hint="@string/search_workouts"
                 android:inputType="text"
                 android:textColor="?colorOnSurface"
-                android:textColorHint="@color/text_hint_light"
+                android:textColorHint="?attr/colorOnSurfaceVariant"
                 android:textSize="14sp" />
         </LinearLayout>
 

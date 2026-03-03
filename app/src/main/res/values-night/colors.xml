@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark overrides for generic dynamic usage when theme swaps -->
+    <color name="primary_surface">#242442</color>
+    <color name="chart_bar_bg">#2A2A4A</color>
+</resources>

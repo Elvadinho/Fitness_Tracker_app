@@ -57,6 +57,8 @@ class SettingsFragment : Fragment() {
             Toast.makeText(requireContext(), "Notifications $status", Toast.LENGTH_SHORT).show()
         }
 
+        val btnDeleteAccount = view.findViewById<MaterialButton>(R.id.btnDeleteAccount)
+
         // Logout
         btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
@@ -72,6 +74,26 @@ class SettingsFragment : Fragment() {
                     startActivity(intent)
                 }
                 .setNegativeButton(getString(R.string.no), null)
+                .show()
+        }
+
+        // Delete Account
+        btnDeleteAccount.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Delete Account")
+                .setMessage("Are you sure you want to permanently delete your account and all data? This action cannot be undone.")
+                .setPositiveButton("Delete") { _, _ ->
+                    // Clear ALL data from SharedPreferences
+                    val prefs = requireContext().getSharedPreferences("FitnessUserPrefs", Context.MODE_PRIVATE)
+                    prefs.edit().clear().apply()
+
+                    Toast.makeText(requireContext(), "Account deleted successfully", Toast.LENGTH_SHORT).show()
+                    
+                    val intent = Intent(requireContext(), LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                }
+                .setNegativeButton("Cancel", null)
                 .show()
         }
     }

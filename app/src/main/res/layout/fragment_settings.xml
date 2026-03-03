@@ -78,7 +78,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_chevron_right"
-                    app:tint="@color/text_hint_light"
+                    app:tint="?attr/colorOnSurfaceVariant"
                     android:contentDescription="Edit" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -223,7 +223,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/ic_chevron_right"
-                        app:tint="@color/text_hint_light"
+                        app:tint="?attr/colorOnSurfaceVariant"
                         android:contentDescription="Open" />
                 </LinearLayout>
             </LinearLayout>
@@ -354,8 +354,20 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
             android:text="@string/logout"
+            android:textColor="@color/primary"
+            app:strokeColor="@color/primary"
+            app:cornerRadius="16dp" />
+
+        <!-- Delete Account Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDeleteAccount"
+            style="@style/OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:text="Delete Account"
             android:textColor="@color/accent"
             app:strokeColor="@color/accent"
             app:cornerRadius="16dp" />

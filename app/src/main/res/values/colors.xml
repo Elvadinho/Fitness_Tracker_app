@@ -4,7 +4,7 @@
     <color name="primary">#6C63FF</color>
     <color name="primary_dark">#5A52D5</color>
     <color name="primary_light">#8B83FF</color>
-    <color name="primary_surface">#2A2A4A</color>
+    <color name="primary_surface">#F0F0FF</color>
 
     <!-- Accent / Secondary -->
     <color name="accent">#FF6B6B</color>
@@ -53,7 +53,7 @@
 
     <!-- Chart Colors -->
     <color name="chart_bar">#6C63FF</color>
-    <color name="chart_bar_bg">#2A2A4A</color>
+    <color name="chart_bar_bg">#E8E6FF</color>
     <color name="chart_line">#FF6B6B</color>
 
     <!-- Misc -->
