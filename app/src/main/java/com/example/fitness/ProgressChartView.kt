@@ -27,7 +27,9 @@ class ProgressChartView @JvmOverloads constructor(
         color = ContextCompat.getColor(context, R.color.chart_bar_bg)
     }
     private val labelPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = ContextCompat.getColor(context, R.color.text_secondary_dark)
+        val typedValue = android.util.TypedValue()
+        context.theme.resolveAttribute(com.google.android.material.R.attr.colorOnSurfaceVariant, typedValue, true)
+        color = typedValue.data
         textSize = 28f
         textAlign = Paint.Align.CENTER
     }

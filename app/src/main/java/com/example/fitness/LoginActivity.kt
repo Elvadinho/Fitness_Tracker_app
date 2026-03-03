@@ -57,13 +57,19 @@ class LoginActivity : AppCompatActivity() {
             tilConfirmPassword.error = null
         }
 
+        fun getInactiveColor(): Int {
+            val typedValue = android.util.TypedValue()
+            theme.resolveAttribute(com.google.android.material.R.attr.colorOnSurfaceVariant, typedValue, true)
+            return typedValue.data
+        }
+
         fun switchToLogin() {
             isLoginMode = true
             clearErrors()
             tabLogin.setBackgroundResource(R.drawable.bg_button_gradient)
             tabLogin.setTextColor(getColor(R.color.white))
             tabSignUp.setBackgroundColor(getColor(R.color.transparent))
-            tabSignUp.setTextColor(getColor(R.color.text_secondary_dark))
+            tabSignUp.setTextColor(getInactiveColor())
 
             tilName.visibility = View.GONE
             tilConfirmPassword.visibility = View.GONE
@@ -80,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
             tabSignUp.setBackgroundResource(R.drawable.bg_button_gradient)
             tabSignUp.setTextColor(getColor(R.color.white))
             tabLogin.setBackgroundColor(getColor(R.color.transparent))
-            tabLogin.setTextColor(getColor(R.color.text_secondary_dark))
+            tabLogin.setTextColor(getInactiveColor())
 
             tilName.visibility = View.VISIBLE
             tilConfirmPassword.visibility = View.VISIBLE
