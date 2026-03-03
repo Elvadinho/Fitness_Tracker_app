@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#6C63FF</color>
+    <color name="primary_dark">#5A52D5</color>
+    <color name="primary_light">#8B83FF</color>
+    <color name="primary_surface">#E8E6FF</color>
+
+    <!-- Accent / Secondary -->
+    <color name="accent">#FF6B6B</color>
+    <color name="accent_dark">#E05555</color>
+    <color name="accent_light">#FF9B9B</color>
+
+    <!-- Success / Green -->
+    <color name="success">#4CAF50</color>
+    <color name="success_light">#C8E6C9</color>
+
+    <!-- Warning / Orange -->
+    <color name="warning">#FF9800</color>
+    <color name="warning_light">#FFE0B2</color>
+
+    <!-- Background & Surface (Light) -->
+    <color name="background_light">#F8F9FE</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="card_light">#FFFFFF</color>
+
+    <!-- Background & Surface (Dark) -->
+    <color name="background_dark">#0F0F23</color>
+    <color name="surface_dark">#1A1A2E</color>
+    <color name="card_dark">#242442</color>
+
+    <!-- Text Colors (Light) -->
+    <color name="text_primary_light">#1A1A2E</color>
+    <color name="text_secondary_light">#6B7280</color>
+    <color name="text_hint_light">#9CA3AF</color>
+
+    <!-- Text Colors (Dark) -->
+    <color name="text_primary_dark">#F8F9FE</color>
+    <color name="text_secondary_dark">#9CA3AF</color>
+    <color name="text_hint_dark">#6B7280</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#6C63FF</color>
+    <color name="gradient_end">#A855F7</color>
+    <color name="gradient_accent_start">#FF6B6B</color>
+    <color name="gradient_accent_end">#FF9B9B</color>
+
+    <!-- Category Colors -->
+    <color name="category_strength">#6C63FF</color>
+    <color name="category_cardio">#FF6B6B</color>
+    <color name="category_flexibility">#10B981</color>
+    <color name="category_hiit">#F59E0B</color>
+
+    <!-- Chart Colors -->
+    <color name="chart_bar">#6C63FF</color>
+    <color name="chart_bar_bg">#E8E6FF</color>
+    <color name="chart_line">#FF6B6B</color>
+
+    <!-- Misc -->
+    <color name="divider_light">#F0F0F5</color>
+    <color name="divider_dark">#2A2A4A</color>
+    <color name="ripple_light">#1A6C63FF</color>
+    <color name="ripple_dark">#336C63FF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>
