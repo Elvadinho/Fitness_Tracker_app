@@ -1,5 +1,6 @@
 package com.example.fitness
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,6 +29,18 @@ class SettingsFragment : Fragment() {
         val switchNotifications = view.findViewById<MaterialSwitch>(R.id.switchNotifications)
         val btnLogout = view.findViewById<MaterialButton>(R.id.btnLogout)
 
+        val prefs = requireContext().getSharedPreferences("FitnessUserPrefs", Context.MODE_PRIVATE)
+        val userName = prefs.getString("user_name", "User")
+        val userEmail = prefs.getString("user_email", "user@example.com")
+
+        // In fragment_settings.xml, we have TextViews with text set to @string/user_name and @string/user_email. 
+        // We will find them by navigating the view hierarchy since they don't have IDs. (I will add IDs in the layout next step)
+        val tvUserName = view.findViewById<android.widget.TextView>(R.id.tvSettingsUserName)
+        val tvUserEmail = view.findViewById<android.widget.TextView>(R.id.tvSettingsUserEmail)
+        
+        tvUserName?.text = userName
+        tvUserEmail?.text = userEmail
+
         // Dark mode toggle
         switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
             val mode = if (isChecked) {
@@ -50,6 +63,10 @@ class SettingsFragment : Fragment() {
                 .setTitle(getString(R.string.logout))
                 .setMessage(getString(R.string.logout_confirm))
                 .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                    // Clear login state from SharedPreferences
+                    val prefs = requireContext().getSharedPreferences("FitnessUserPrefs", Context.MODE_PRIVATE)
+                    prefs.edit().putBoolean("is_logged_in", false).apply()
+
                     val intent = Intent(requireContext(), LoginActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)

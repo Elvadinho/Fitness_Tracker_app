@@ -33,13 +33,19 @@ class WorkoutListFragment : Fragment() {
 
         // Set greeting based on time of day
         val tvGreeting = view.findViewById<TextView>(R.id.tvGreeting)
+        val tvUserName = view.findViewById<TextView>(R.id.tvUserName)
+        
+        val sharedPreferences = requireContext().getSharedPreferences("FitnessUserPrefs", android.content.Context.MODE_PRIVATE)
+        val userName = sharedPreferences.getString("user_name", "User")
+        
         val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
         tvGreeting.text = when {
             hour < 12 -> getString(R.string.greeting_morning)
             hour < 17 -> getString(R.string.greeting_afternoon)
             else -> getString(R.string.greeting_evening)
         }
-
+        tvUserName.text = userName
+        
         // Setup RecyclerView
         val rvWorkouts = view.findViewById<RecyclerView>(R.id.rvWorkouts)
         adapter = WorkoutAdapter(allWorkouts) { workout ->
